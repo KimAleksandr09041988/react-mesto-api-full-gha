@@ -1,0 +1,22 @@
+.gallery__btn-remove {
+  position: absolute;
+  z-index: 5;
+  opacity: 1;
+  cursor: pointer;
+  top: 20px;
+  right: 20px;
+  width: 18px;
+  height: 19px;
+  padding: 0;
+  border: none;
+  background-image: url('../../../image/cartCard.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  transition: opacity .3s ease-in-out;
+}
+
+.gallery__btn-remove:hover {
+  opacity: .6;
+}

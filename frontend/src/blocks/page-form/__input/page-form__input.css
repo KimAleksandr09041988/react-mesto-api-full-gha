@@ -1,0 +1,21 @@
+.page-form__input {
+  display: block;
+  outline: none;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #fff;
+  padding: 0 0 13px 0;
+  background-color: transparent;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #fff;
+}
+
+.page-form__input:not(:first-child) {
+  margin-top: 30px;
+}
+
+.page-form__input:nth-last-of-type(1) {
+  margin-bottom: 216px;
+}

@@ -1,0 +1,12 @@
+.header__link {
+  border: none;
+  outline: none;
+  padding: 0;
+  cursor: pointer;
+  background-color: transparent;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 22px;
+  color: #fff;
+}

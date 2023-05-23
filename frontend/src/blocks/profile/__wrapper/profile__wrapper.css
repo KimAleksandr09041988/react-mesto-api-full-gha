@@ -1,0 +1,6 @@
+.profile__wrapper {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  margin-bottom: 9px;
+}

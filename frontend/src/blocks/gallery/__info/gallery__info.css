@@ -1,0 +1,14 @@
+.gallery__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 27px 21px 26px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+@media screen and (max-width:400px) {
+  .gallery__info {
+    padding-bottom: 25px;
+  }
+}

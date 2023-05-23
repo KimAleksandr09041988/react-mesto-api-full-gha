@@ -1,0 +1,17 @@
+.gallery {
+  padding-top: 50px;
+  min-height: calc(100vh - 475px);
+}
+
+@media screen and (max-width:768px) {
+  .gallery {
+    min-height: calc(100vh - 638px);
+  }
+}
+
+@media screen and (max-width:400px) {
+  .gallery {
+    min-height: calc(100vh - 544px);
+    padding-top: 34px;
+  }
+}
