@@ -12,7 +12,7 @@ const auth = require('./middlewares/auth');
 const { validateSignup, validateSignin, handleErrors } = require('./middlewares/errors');
 const NotFound = require('./customErrors/NotFound');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
-// const cors = require('./cors/cors');
+const cors = require('./cors/cors');
 
 // eslint-disable-next-line import/no-extraneous-dependencies, import/order
 const parser = require('cookie-parser');
@@ -26,7 +26,7 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(requestLogger);
-// app.use(cors);
+app.use(cors);
 app.get('/crash-test', () => {
   setTimeout(() => {
     throw new Error('Сервер сейчас упадёт');
