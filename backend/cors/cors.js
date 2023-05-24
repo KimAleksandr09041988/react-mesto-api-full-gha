@@ -1,9 +1,7 @@
 // Массив доменов, с которых разрешены кросс-доменные запросы
 const allowedCors = [
-  'https://kimbekend.nomoredomains.monster',
-  'http://kimbekend.nomoredomains.monster',
-  'http://localhost:3000',
-  'https://localhost:3000',
+  'https://kimfrontend.nomoredomains.monster',
+  'http://kimfrontend.nomoredomains.monster',
 ];
 
 const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';

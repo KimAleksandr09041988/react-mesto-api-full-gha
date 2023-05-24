@@ -15,6 +15,7 @@ class Auth {
     return fetch(`${this._baseUrl}/signup`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
       body: JSON.stringify({
         password,
         email
