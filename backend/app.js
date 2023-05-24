@@ -1,9 +1,12 @@
+// eslint-disable-next-line import/no-unresolved
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 // eslint-disable-next-line import/no-extraneous-dependencies
 const { errors } = require('celebrate');
 
 const { PORT = 3000 } = process.env;
+
 const app = express();
 const router = require('./routes/index');
 

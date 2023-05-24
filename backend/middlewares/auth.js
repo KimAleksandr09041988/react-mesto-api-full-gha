@@ -1,4 +1,5 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
+// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved
+require('dotenv').config();
 const jwt = require('jsonwebtoken');
 const Unauthorized = require('../customErrors/Unauthorized');
 

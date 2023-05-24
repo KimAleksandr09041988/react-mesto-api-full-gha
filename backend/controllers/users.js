@@ -1,3 +1,5 @@
+// eslint-disable-next-line import/no-unresolved
+require('dotenv').config();
 const bcrypt = require('bcryptjs');
 // eslint-disable-next-line import/no-extraneous-dependencies
 const jwt = require('jsonwebtoken');
