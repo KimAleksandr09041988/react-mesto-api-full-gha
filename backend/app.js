@@ -35,6 +35,7 @@ app.get('/crash-test', () => {
 
 app.post('/signin', validateSignin, login);
 app.post('/signup', validateSignup, createUser);
+
 app.get('/signout', (_, res) => {
   res.clearCookie('jwt').send({ message: 'Выход' });
 });

@@ -23,12 +23,15 @@ const getUsers = (req, res, next) => {
 };
 
 const createUser = (req, res, next) => {
-  bcrypt.hash(req.body.password, 10)
+  const {
+    name, about, avatar, email, password,
+  } = req.body;
+  bcrypt.hash(password, 10)
     .then((hash) => User.create({
-      name: req.body.name,
-      about: req.body.about,
-      avatar: req.body.avatar,
-      email: req.body.email,
+      name,
+      about,
+      avatar,
+      email,
       password: hash,
     }))
     .then((user) => {
@@ -40,12 +43,12 @@ const createUser = (req, res, next) => {
       if (err.code === 11000) {
         const error = new RepeatsEmailError('Пользователь с таким email зарегистрирован');
         next(error);
-      }
-      if (err.code === 'ValidationError') {
+      } else if (err.code === 'ValidationError') {
         const error = new BadRequest('не корректные данные');
         next(error);
+      } else {
+        next(err);
       }
-      next(err);
     });
 };
 
