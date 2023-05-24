@@ -1,13 +1,12 @@
-// eslint-disable-next-line import/no-unresolved
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
-// eslint-disable-next-line import/no-extraneous-dependencies
 const { errors } = require('celebrate');
 
-const { PORT = 3000 } = process.env;
+const { PORT } = process.env;
 
 const app = express();
+const parser = require('cookie-parser');
 const router = require('./routes/index');
 
 const { createUser, login } = require('./controllers/users');
@@ -16,9 +15,6 @@ const { validateSignup, validateSignin, handleErrors } = require('./middlewares/
 const NotFound = require('./customErrors/NotFound');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const cors = require('./cors/cors');
-
-// eslint-disable-next-line import/no-extraneous-dependencies, import/order
-const parser = require('cookie-parser');
 
 mongoose.connect('mongodb://localhost:27017/mestodb', {
   useNewUrlParser: true,
