@@ -15,6 +15,7 @@ class Auth {
     return fetch(`${this._baseUrl}/signup`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
       body: JSON.stringify({
         password,
         email
@@ -27,6 +28,7 @@ class Auth {
     return fetch(`${this._baseUrl}/signin`, {
       method: 'POST',
       headers: { 'Content-Type': "application/json" },
+      credentials: 'include',
       body: JSON.stringify({ password, email })
     })
       .then(res => this._getResponseData(res))
@@ -39,6 +41,7 @@ class Auth {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
+      credentials: 'include',
     }).then(this._getResponseData);
   }
 }
@@ -46,6 +49,7 @@ class Auth {
 
 const auth = new Auth({
   baseUrl: 'http://kimbekend.nomoredomains.monster'
+  // baseUrl: 'http://localhost:3000'
 });
 
 export default auth

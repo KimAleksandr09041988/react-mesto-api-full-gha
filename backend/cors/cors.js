@@ -2,12 +2,14 @@
 const allowedCors = [
   'https://kimfrontend.nomoredomains.monster',
   'http://kimfrontend.nomoredomains.monster',
+  'https://localhost:3000',
+  'http://localhost:3000',
 ];
 
 const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
 
 // eslint-disable-next-line consistent-return
-module.exports.cors = (req, res, next) => {
+const cors = (req, res, next) => {
   const { method } = req;
   const { origin } = req.headers;
   const requestHeaders = req.headers['access-control-request-headers'];
@@ -22,3 +24,5 @@ module.exports.cors = (req, res, next) => {
   }
   next();
 };
+
+module.exports = cors;
