@@ -45,7 +45,7 @@ class Auth {
 
 
 const auth = new Auth({
-  baseUrl: 'https://auth.nomoreparties.co'
+  baseUrl: 'http://kimbekend.nomoredomains.monster'
 });
 
 export default auth
