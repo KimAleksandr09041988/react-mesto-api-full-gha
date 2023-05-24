@@ -14,6 +14,9 @@ const NotFound = require('./customErrors/NotFound');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const cors = require('./cors/cors');
 
+// eslint-disable-next-line import/no-extraneous-dependencies, import/order
+const parser = require('cookie-parser');
+
 mongoose.connect('mongodb://localhost:27017/mestodb', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -32,7 +35,11 @@ app.get('/crash-test', () => {
 
 app.post('/signin', validateSignin, login);
 app.post('/signup', validateSignup, createUser);
+app.get('/signout', (_, res) => {
+  res.clearCookie('jwt').send({ message: 'Выход' });
+});
 
+app.use(parser());
 app.use(auth);
 
 app.use(router);
