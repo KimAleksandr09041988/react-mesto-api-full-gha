@@ -1,5 +1,7 @@
 // Массив доменов, с которых разрешены кросс-доменные запросы
 const allowedCors = [
+  'http://kimbekend.nomoredomains.monster',
+  'https://kimbekend.nomoredomains.monster',
   'https://kimfrontend.nomoredomains.monster',
   'http://kimfrontend.nomoredomains.monster',
   'https://localhost:3000',
