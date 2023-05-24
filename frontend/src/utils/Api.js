@@ -39,7 +39,6 @@ class Api {
     return fetch(`${this._url}/cards`, {
       method: 'GET',
       headers: this._headers,
-      credentials: 'include',
     })
       .then(res => this._getResponseData(res));
   }
