@@ -28,6 +28,7 @@ class Auth {
     return fetch(`${this._baseUrl}/signin`, {
       method: 'POST',
       headers: { 'Content-Type': "application/json" },
+      credentials: 'include',
       body: JSON.stringify({ password, email })
     })
       .then(res => this._getResponseData(res))
@@ -40,6 +41,7 @@ class Auth {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
+      credentials: 'include',
     }).then(this._getResponseData);
   }
 }
