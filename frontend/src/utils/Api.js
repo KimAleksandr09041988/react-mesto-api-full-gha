@@ -82,7 +82,7 @@ class Api {
 }
 
 const server = new Api({
-  url: 'https://mesto.nomoreparties.co/v1/cohort-59',
+  url: 'http://kimbekend.nomoredomains.monster',
   headers: {
     authorization: '55d9c654-87a0-44f5-b6c8-0fdd71644143',
     'Content-Type': 'application/json'

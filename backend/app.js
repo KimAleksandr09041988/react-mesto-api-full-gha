@@ -12,6 +12,7 @@ const auth = require('./middlewares/auth');
 const { validateSignup, validateSignin, handleErrors } = require('./middlewares/errors');
 const NotFound = require('./customErrors/NotFound');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const cors = require('./cors/cors');
 
 mongoose.connect('mongodb://localhost:27017/mestodb', {
   useNewUrlParser: true,
@@ -22,6 +23,12 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(requestLogger);
+app.use(cors);
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
 
 app.post('/signin', validateSignin, login);
 app.post('/signup', validateSignup, createUser);
