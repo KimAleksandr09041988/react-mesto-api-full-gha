@@ -64,8 +64,9 @@ const getUserById = (req, res, next) => {
       if (err.name === 'CastError') {
         const error = new BadRequest('Некорректный id');
         next(error);
+      } else {
+        next(err);
       }
-      next(err);
     });
 };
 
@@ -83,8 +84,9 @@ const editProfile = (req, res, next) => {
       if (err.name === 'ValidationError') {
         const erros = new BadRequest('Некорректный данные');
         next(erros);
+      } else {
+        next(err);
       }
-      next(err);
     });
 };
 
@@ -98,8 +100,9 @@ const updateAvatar = (req, res, next) => {
       if (err.name === 'ValidationError') {
         const erros = new BadRequest('Некорректный данные');
         next(erros);
+      } else {
+        next(err);
       }
-      next(err);
     });
 };
 
